@@ -1,47 +1,17 @@
-/*pass by reference*/
-/*arrays*/
-
-#include "iostream"
+/*POinters analysis*/
+#include<iostream>
 using namespace std;
-
-void fun(int *x, int *y)
+void swap(char*& str1, char*& str2)
 {
-	cout << endl<<"inside the function";
-	cout << endl << x << ' ' << y;
-	*x = 65;
-	return;
-}
-
-void arras(void)
-{
-	int a;
-	char b[50];
-	cout << "eneter number of items" << endl;
-	cin >> a;
-
-	for (int i = 0; i < a; i++)
-	{
-		char d;
-		cin >> d;
-		b[i] = d;
-	}
-	cout << "the values are" << endl;
-	for (int i = 0; i < a; i++)
-	{
-		cout << b[i];
-		cout << endl;
-	}
+    char* temp = str1;
+    str1 = str2;
+    str2 = temp;
 }
 
 int main()
 {
-	int a = 4, b = 5;
-	cout << endl << a << ' ' << b;
-
-//	fun(&a, &b);
-	cout << endl << a << ' ' << b;
-
-	arras();
-
-	return 5;
+    int* ptr = NULL;
+    int& ref = *ptr;
+    cout << ref;
+    return 0;
 }
