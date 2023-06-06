@@ -1,17 +1,22 @@
-/*POinters analysis*/
-#include<iostream>
+#include "iostream"
+#include <vector>
+#include "iterator"
 using namespace std;
-void swap(char*& str1, char*& str2)
-{
-    char* temp = str1;
-    str1 = str2;
-    str2 = temp;
-}
 
 int main()
 {
-    int* ptr = NULL;
-    int& ref = *ptr;
-    cout << ref;
-    return 0;
+	vector <pair<int, string>> variable;
+	vector <int> ::  iterator it;
+	variable.push_back(make_pair(45,"minachi"));
+	cout << variable.at(0).first<<"      "<<variable[0].second<<endl;
+
+	vector<int> intcounter;
+	for (int i = 0; i < 5; i++)
+	{
+		intcounter.push_back(i);
+	}
+	cout << intcounter.front()<<endl;
+	it = intcounter.begin();
+	cout << *it<<endl;
+	return 0;
 }
